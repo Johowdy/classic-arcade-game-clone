@@ -72,8 +72,9 @@ class Player {
           this.y -= 80;
         }
         if (this.y <0) {
-          this.x = 200;
-          this.y = 375;
+          setTimeout(function(player) {
+            player.reset()
+          }, 150, this);
         }
         break;
       case 'right':
@@ -87,6 +88,12 @@ class Player {
         }
     }
     console.log(move, this.x, this.y);
+  }
+  //method to move player back to start after win
+  reset() {
+    this.x = 200;
+    this.y = 375;
+    this.render();
   }
 }
 
