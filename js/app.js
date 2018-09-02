@@ -63,11 +63,16 @@ class Player {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
 
-  //TODO-->: create update() method
-    //check for collision with enemy using x & y coordinates
-    //check for win using x & y coordinates
+  //method that checks for collision b/t player and enemy
+  //resets player to beginning if collision
   update() {
-
+    const playerRow = getRow(this.y);
+    allEnemies.forEach(function(enemy) {
+      if (getRow(enemy.y) === playerRow &&
+        ((enemy.x >= (player.x - 50)) && (enemy.x <= (player.x + 50)))) {
+        player.reset();
+      }
+    })
   }
   //update player's x & y coordinates based on input from (event listerner)
   //keep player from moving offscreen
@@ -84,6 +89,7 @@ class Player {
         if (this.y > 0) {
           this.y -= 80;
         }
+        //checks for player reaching water, resets to beginning after time delay
         if (this.y <0) {
           setTimeout(function(player) {
             player.reset()
@@ -108,7 +114,10 @@ class Player {
     this.render();
   }
 }
-
+//function to get row number from y coordinate
+function getRow(y) {
+  return Math.floor(y/83);
+}
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [new Enemy(), new Enemy(), new Enemy()];
