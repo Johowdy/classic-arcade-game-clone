@@ -27,10 +27,14 @@ Enemy.prototype.update = function(dt) {
 //method to set enemy's speed and place enemy to left of board
 Enemy.prototype.reset = function() {
   //TODO-->: set the Enemy initial location
-  this.y = 60;
+  const y_Options = [60, 225, 142];
+  const y_Idx = Math.floor(Math.random() * 3);
+  this.y = y_Options[y_Idx];
   this.x = -100;
-  //TODO-->: set the Enemy speed
-  this.speed = 120;
+  //TODO-->: set the ESnemy speed
+  const bugSpeed = [120, 200, 300];
+  const bugIdx = Math.floor(Math.random() * 3);
+  this.speed = bugSpeed[bugIdx];
 
 }
 // Draw the enemy on the screen, required method for game
@@ -107,7 +111,7 @@ class Player {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-const allEnemies = [new Enemy()];
+const allEnemies = [new Enemy(), new Enemy(), new Enemy()];
 // Place the player object in a variable called player
 const player = new Player();
 
