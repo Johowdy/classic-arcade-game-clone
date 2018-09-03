@@ -2,7 +2,7 @@
 var Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-
+    //set the initial location and speed
     this.reset();
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -15,23 +15,22 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    //TODO-->: update Enemy location
     this.x += this.speed * dt;
+    //if enemy moves offscreen, resets to beginning of canvas
     if (this.x >= 505) {
       this.reset();
     }
-      //move enemy forward if not at end of game board
-      //else reset enemy position to start
-    //TODO-->: handle Enemy collision with Player
 };
-//method to set enemy's speed and place enemy to left of board
+
+//method to set enemy's speed and location
 Enemy.prototype.reset = function() {
-  //TODO-->: set the Enemy initial location
+  //randomly assigns enemy location to one of three rows
   const y_Options = [60, 225, 142];
   const y_Idx = Math.floor(Math.random() * 3);
   this.y = y_Options[y_Idx];
+  //places enemy to left of canvas
   this.x = -100;
-  //TODO-->: set the ESnemy speed
+  //randomly selects one of three speeds for enemy
   const bugSpeed = [120, 200, 300];
   const bugIdx = Math.floor(Math.random() * 3);
   this.speed = bugSpeed[bugIdx];
@@ -45,20 +44,15 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-//TODO--> :Create Player class
-//TODO-->: set player initial location
-  //x coordinate
-  //y coordinate
-//TODO-->: load sprite image
 
 class Player {
   constructor() {
     this.sprite = 'images/char-boy.png';
+    //starting coordinates for player
     this.x = 200;
     this.y = 375;
   }
-    //display player sprite image on current x & y coordinates
-    //use code from render method for the enemy
+  //display player sprite image on current x & y coordinates
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
@@ -67,6 +61,8 @@ class Player {
   //resets player to beginning if collision
   update() {
     const playerRow = getRow(this.y);
+    //checks to see if enemy & player on same row, if so:
+    //checks for matching x coordinate +- 50px
     allEnemies.forEach(function(enemy) {
       if (getRow(enemy.y) === playerRow &&
         ((enemy.x >= (player.x - 50)) && (enemy.x <= (player.x + 50)))) {
@@ -76,8 +72,7 @@ class Player {
   }
   //update player's x & y coordinates based on input from (event listerner)
   //keep player from moving offscreen
-  //reset player's x & y coordinates to beginning (probably
-  // called on in update method after win or collision?)
+  //reset player's x & y coordinates to beginning after win
   handleInput(move) {
     switch(move) {
       case 'left':
@@ -107,11 +102,10 @@ class Player {
         }
     }
   }
-  //method to move player back to start after win
+  //method to move player back to start
   reset() {
     this.x = 200;
     this.y = 375;
-    this.render();
   }
 }
 //function to get row number from y coordinate
