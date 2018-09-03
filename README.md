@@ -1,4 +1,4 @@
- # Classic Arcade Game Clone: Frogger
+ # Classic Arcade Game Clone
 
  ## Table of Contents
 
@@ -13,8 +13,8 @@
  to the beginning to play again! Have fun!
 
  ## Resources
- Matthew Cranford's Walkthrough
- [part 1](https://matthewcranford.com/arcade-game-walkthrough-part-1-starter-code-breakdown/)
- [part 2](https://matthewcranford.com/arcade-game-walkthrough-part-2-pseudo-code/)
- [part 3](https://matthewcranford.com/arcade-game-walkthrough-part-3-creating-a-hero/)
- [JavaScript reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+ * Matthew Cranford's Walkthrough
+     * [part 1](https://matthewcranford.com/arcade-game-walkthrough-part-1-starter-code-breakdown/)
+     * [part 2](https://matthewcranford.com/arcade-game-walkthrough-part-2-pseudo-code/)
+     * [part 3](https://matthewcranford.com/arcade-game-walkthrough-part-3-creating-a-hero/)
+ * [JavaScript reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
