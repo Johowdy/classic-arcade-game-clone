@@ -1,6 +1,20 @@
-frontend-nanodegree-arcade-game
-===============================
+ # Classic Arcade Game Clone: Frogger
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+ ## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+ * [Instructions](#instructions)
+ * [Resources](#resources)
+
+ ## Instructions for Running game
+ Clone or download the project. Open the index.html file in a browser to play.
+
+ ## Instructions for Playing game
+ To play this Classic Arcade Game, use the arrow keys to move the player from the grass to the water. Watch out for the bugs on the stone paths! If they contact your player you lose and will be sent back to the beginning. The game is won when your player reaches the water. After winning your player will be reset
+ to the beginning to play again! Have fun!
+
+ ## Resources
+ Matthew Cranford's Walkthrough
+ [part 1](https://matthewcranford.com/arcade-game-walkthrough-part-1-starter-code-breakdown/)
+ [part 2](https://matthewcranford.com/arcade-game-walkthrough-part-2-pseudo-code/)
+ [part 3](https://matthewcranford.com/arcade-game-walkthrough-part-3-creating-a-hero/)
+ [JavaScript reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
