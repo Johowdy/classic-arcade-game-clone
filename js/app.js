@@ -65,10 +65,10 @@ class Player {
     //checks for matching x coordinate +- 50px
     allEnemies.forEach(function(enemy) {
       if (getRow(enemy.y) === playerRow &&
-        ((enemy.x >= (player.x - 50)) && (enemy.x <= (player.x + 50)))) {
-        player.reset();
+        ((enemy.x >= (this.x - 50)) && (enemy.x <= (this.x + 50)))) {
+        this.reset();
       }
-    })
+    }, this);
   }
   //update player's x & y coordinates based on input from (event listerner)
   //keep player from moving offscreen
